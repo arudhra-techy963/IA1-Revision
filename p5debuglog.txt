@@ -1,0 +1,131 @@
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x772: file p8final.c, line 10.
+(gdb) r
+Starting program: /home/runner/pps-test1-arudhra-techy963/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:10
+10    a = input();
+(gdb) s
+input () at p8final.c:24
+24  {
+(gdb) n
+26      printf("Enter number = ");
+(gdb) n
+27      scanf("%f", &x);
+(gdb) n
+Enter number = 16.0
+28      return x;
+(gdb) n
+29  }
+(gdb) n
+main () at p8final.c:11
+11    b = input();
+(gdb) n
+Enter number = 25.0
+12    c = input();
+(gdb) n
+Enter number = 36.0
+15    a1 = sqRoot(a);
+(gdb) n
+16    b1 = sqRoot(b);
+(gdb) n
+17    c1 = sqRoot(c);
+(gdb) s
+sqRoot (n=36) at p8final.c:35
+35    float x = n;
+(gdb) n
+36    float y = 1.0;
+(gdb) n
+38    if ( x < 0 )
+(gdb) n
+46      while (x > y)
+(gdb) n
+48        x = (x + y) / 2;
+(gdb) n
+49        y = n / x;
+(gdb) n
+46      while (x > y)
+(gdb) 
+48        x = (x + y) / 2;
+(gdb) 
+49        y = n / x;
+(gdb) finish
+Run till exit from #0  sqRoot (n=36) at p8final.c:49
+0x000055c693a007e3 in main () at p8final.c:17
+17    c1 = sqRoot(c);
+Value returned is $1 = 6
+(gdb) n
+19    output(a,b,c,a1,b1,c1);
+(gdb) s
+output (x=16, y=25, z=36, result1=4, result2=5, result3=6)
+    at p8final.c:58
+58      printf("Square Root of %.2f is %.2f\n", x, result1);
+(gdb) n
+Square Root of 16.00 is 4.00
+59      printf("Square Root of %.2f is %.2f\n", y, result2);
+(gdb) n
+Square Root of 25.00 is 5.00
+60      printf("Square Root of %.2f is %.2f\n", z, result3);
+(gdb) n
+Square Root of 36.00 is 6.00
+61  }
+(gdb) n
+main () at p8final.c:21
+21  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 158) exited normally]
+(gdb) 
+The program is not being run.
+(gdb) r
+Starting program: /home/runner/pps-test1-arudhra-techy963/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8final.c:10
+10    a = input();
+(gdb) n
+Enter number = n
+11    b = input();
+(gdb) n
+Enter number = 25.0
+12    c = input();
+(gdb) n
+Enter number = 36.0
+15    a1 = sqRoot(a);
+(gdb) m
+Ambiguous command "m": macro, maintenance, make, mem, monitor, mt.
+(gdb) 
+Ambiguous command "m": macro, maintenance, make, mem, monitor, mt.
+(gdb) mn
+Undefined command: "mn".  Try "help".
+(gdb) n
+16    b1 = sqRoot(b);
+(gdb) n
+17    c1 = sqRoot(c);
+(gdb) n
+19    output(a,b,c,a1,b1,c1);
+(gdb) n
+Square Root of 0.00 is 0.00
+Square Root of 25.00 is 5.00
+Square Root of 36.00 is 6.00
+21  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 169) exited normally]
+(gdb) q
